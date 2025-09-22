@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Panel główny{% endblock %}</title>
+  {% load static %}  
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <!-- Panel boczny -->
+    <aside class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="{% url 'home' %}">🏠 Strona główna</a></li>
+        <li><a href="#">🏢 Obiekty</a></li>
+        <li><a href="#">🛠 Serwisy</a></li>
+        <li><a href="#">🔧 Konserwacje</a></li>
+        <li><a href="#">📄 Faktury</a></li>
+        <li><a href="#">💰 Rozliczenia</a></li>
+        <li><a href="#">📊 Kosztorysy</a></li>
+        <li><a href="#">👤 Klienci</a></li>
+        <li><a href="{% url 'administratorzy' %}">👨‍💼 Administratorzy</a></li>
+      </ul>
+       <div class="admin-link">
+    <a href="/admin/">⚙️ Panel administracyjny</a>
+  </div>
+    </aside>
+
+    <!-- Główna treść -->
+    <main class="content">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</body>
+</html>
